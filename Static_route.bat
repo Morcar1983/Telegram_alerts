@@ -1,0 +1,1 @@
+call C:\ProgramData\Anaconda3\condabin\activate.bat C:\ProgramData\Anaconda3 & cd "C:\temp\" & ipython Static_route.py
