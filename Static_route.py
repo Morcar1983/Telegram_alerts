@@ -21,9 +21,9 @@ def info_load(*path):
 def info_extract(*info):
     extract=()
     for x in info:
-        extract += (re.findall(r'<166>([^I]*)Internet',x),)
-        extract += (re.findall(r'<166>([^d]*.)',x),)
-        extract += (re.findall(r'<164>([^R]*\S*.\S*.\S*)',x),)
+        extract += (re.findall(r'<166>(.*Internet)',x),)
+        extract += (re.findall(r'<166>(.*started.)',x),)
+        extract += (re.findall(r'<164>(.*Reason:.\S*.\S*)',x),)
     return extract
 
 def path_construct(path='c:\\ProgramData\\Paessler\\PRTG Network Monitor\\Trap Database\\sensor 2149\\', sensor_id='2149'):
@@ -44,7 +44,7 @@ def teleg_prep(*extract):
             for z in messa:
                 differ=time_func(dt.datetime.strptime(z, '%b %d %Y %H:%M:%S'))
                 if differ.seconds<70:
-                    r = requests.get(f'https://api.telegram.org/bot2075871995:XXXX/sendMessage?chat_id=-1001715868802&text={y}')
+                    r = requests.get(f'https://api.telegram.org/botXXXXt5Ls/sendMessage?chat_id=-1001715868802&text={y}')
                     
 
 def runner():
